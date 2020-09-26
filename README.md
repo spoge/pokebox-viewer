@@ -1,6 +1,6 @@
-# game-of-life
+# pokemon-box-calculator
 
-A simple implementation of Conway's Game of Life with React & TypeScript. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple app to show where you should put your Pokémon if you want to have them all perfectly sorted.
 
 ## Scripts
 
