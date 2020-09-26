@@ -1,0 +1,61 @@
+.app {
+  text-align: center;
+  background-color: #17161d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+}
+
+.input-field {
+  padding: 0.25em;
+  margin: 0.5em 0.25em;
+  font-size: 24px;
+  width: 3em;
+  height: 1em;
+}
+
+.input-error-label {
+  color: red;
+  font-size: 0.7em;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-self: center;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid gainsboro;
+  background-color: white;
+  color: #17161d;
+  padding: 0em;
+  min-width: 3em;
+  min-height: 3em;
+  max-width: 3em;
+  max-height: 3em;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.cell img {
+  width: 5em;
+}
