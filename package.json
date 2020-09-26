@@ -2,7 +2,7 @@
   "name": "pokemon-box-calculator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sboge.no/pokemon-box",
+  "homepage": "https://sboge.no/pokemon-box-calculator",
   "dependencies": {
     "@types/jest": "^26.0.10",
     "@types/node": "^14.6.0",
