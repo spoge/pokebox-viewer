@@ -15,7 +15,7 @@ const PokeBox: React.FC<Props> = ({ pokeNum }) => {
 
   return (
     <div>
-      <div>Box: {boxNum}</div>
+      <div className="box-label">Box: {boxNum}</div>
       <div className="box">
         {[
           [1, 2, 3, 4, 5, 6].map((column) => (
