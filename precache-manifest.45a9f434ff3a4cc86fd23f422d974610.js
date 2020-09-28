@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f81646ac32540484e54909e7ebc97b35",
+    "revision": "398b0c74c75ec03fa63640d3c3ec5808",
     "url": "/pokemon-box-calculator/index.html"
   },
   {
-    "revision": "0f6d1be4d98195150fbb",
+    "revision": "e1d7e85a2490b10d773a",
     "url": "/pokemon-box-calculator/static/css/main.48b2982d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokemon-box-calculator/static/js/2.b8bef70f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0f6d1be4d98195150fbb",
-    "url": "/pokemon-box-calculator/static/js/main.d0769e92.chunk.js"
+    "revision": "e1d7e85a2490b10d773a",
+    "url": "/pokemon-box-calculator/static/js/main.b4b51c77.chunk.js"
   },
   {
     "revision": "4f6e35a201e4b9066f42",
