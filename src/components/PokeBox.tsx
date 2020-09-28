@@ -31,7 +31,9 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
                     onClick={() =>
                       setPokenum(pokeNumByBoxPosition(boxNum, row, column))
                     }
-                    img={`https://serebii.net/pokedex-swsh/icon/${minThreeDigits(
+                    img={`${
+                      process.env.PUBLIC_URL
+                    }/pokemon-icons/${minThreeDigits(
                       pokeNumByBoxPosition(boxNum, row, column)
                     )}.png`}
                   />
