@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/pokemon-box-calculator/static/css/main.5eec889d.chunk.css",
-    "main.js": "/pokemon-box-calculator/static/js/main.080f6ee7.chunk.js",
-    "main.js.map": "/pokemon-box-calculator/static/js/main.080f6ee7.chunk.js.map",
+    "main.css": "/pokemon-box-calculator/static/css/main.48b2982d.chunk.css",
+    "main.js": "/pokemon-box-calculator/static/js/main.d0769e92.chunk.js",
+    "main.js.map": "/pokemon-box-calculator/static/js/main.d0769e92.chunk.js.map",
     "runtime-main.js": "/pokemon-box-calculator/static/js/runtime-main.4ef8cdd6.js",
     "runtime-main.js.map": "/pokemon-box-calculator/static/js/runtime-main.4ef8cdd6.js.map",
     "static/js/2.b8bef70f.chunk.js": "/pokemon-box-calculator/static/js/2.b8bef70f.chunk.js",
     "static/js/2.b8bef70f.chunk.js.map": "/pokemon-box-calculator/static/js/2.b8bef70f.chunk.js.map",
     "index.html": "/pokemon-box-calculator/index.html",
-    "precache-manifest.8ca3a365169032ad7d91361ef9487d4f.js": "/pokemon-box-calculator/precache-manifest.8ca3a365169032ad7d91361ef9487d4f.js",
+    "precache-manifest.f22773c2b2a302748a245650a543d963.js": "/pokemon-box-calculator/precache-manifest.f22773c2b2a302748a245650a543d963.js",
     "service-worker.js": "/pokemon-box-calculator/service-worker.js",
-    "static/css/main.5eec889d.chunk.css.map": "/pokemon-box-calculator/static/css/main.5eec889d.chunk.css.map",
+    "static/css/main.48b2982d.chunk.css.map": "/pokemon-box-calculator/static/css/main.48b2982d.chunk.css.map",
     "static/js/2.b8bef70f.chunk.js.LICENSE.txt": "/pokemon-box-calculator/static/js/2.b8bef70f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.4ef8cdd6.js",
     "static/js/2.b8bef70f.chunk.js",
-    "static/css/main.5eec889d.chunk.css",
-    "static/js/main.080f6ee7.chunk.js"
+    "static/css/main.48b2982d.chunk.css",
+    "static/js/main.d0769e92.chunk.js"
   ]
 }
