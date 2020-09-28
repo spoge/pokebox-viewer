@@ -26,3 +26,15 @@ Your app is ready to be deployed!
 
 Builds the app for production from the local `develop` branch, then deploys the bundled code to the remote `master` branch of this repository.<br />
 This will make the changes visible on the website.
+
+## Build pokemon json
+
+let data = [...document.getElementsByTagName("tr")].filter(tr => tr.textContent.includes("#"))
+
+let sb = "{";
+data.forEach(tr => {
+let pokemonData = tr.textContent.split("\n");
+sb += `"${pokemonData[2].trim().substring(1)}": "${pokemonData[7].trim()}",`;
+})
+sb += "}";
+console.log(sb);

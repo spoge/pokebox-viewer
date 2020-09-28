@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import PokeBox from "./components/PokeBox";
+import pokemons from "./pokemon";
 
 const App: React.FC = () => {
   const [pokenum, setPokenum] = useState(1);
@@ -30,17 +31,19 @@ const App: React.FC = () => {
       <h2>Pokémon Box Calculator</h2>
       <div>
         <PokeBox pokeNum={pokenum} setPokenum={setPokenum} />
-        <div>
-          <span>Pokédex #</span>
-          <input
-            className="input-field"
-            type="number"
-            min={1}
-            max={893}
-            value={pokenumInput}
-            onChange={(e) => validateThenSetPokenum(e.target.value)}
-          />
-          {/* <span>Name: {pokenum}</span> */}
+        <div className="pokemon-info">
+          <div>Name: {pokemons[pokenum.toString().padStart(3, "0")]}</div>
+          <div>
+            <span>Pokédex #</span>
+            <input
+              className="input-field"
+              type="number"
+              min={1}
+              max={893}
+              value={pokenumInput}
+              onChange={(e) => validateThenSetPokenum(e.target.value)}
+            />
+          </div>
         </div>
         <div className="input-error-label">
           {validInput ? " " : "Invalid Pokédex number"}

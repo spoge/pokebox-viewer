@@ -9,6 +9,12 @@
   color: white;
 }
 
+.pokemon-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .input-field {
   padding: 0.25em;
   margin: 0.5em 0.25em;
