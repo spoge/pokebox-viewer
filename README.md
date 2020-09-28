@@ -1,4 +1,4 @@
-# pokemon-box-calculator
+# pokemon-box-viewer
 
 A simple app to show where you should put your Pokémon if you want to have them all perfectly sorted.
 
