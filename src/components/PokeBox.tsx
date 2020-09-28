@@ -16,6 +16,8 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
   const pokeNumByBoxPosition = (box: number, row: number, column: number) =>
     (boxNum - 1) * 30 + (row - 1) * 6 + column;
 
+  const doesPokemonExist = (pn: number) => pn >= 1 && pn <= 893;
+
   return (
     <div>
       <div className="box-header">
@@ -54,6 +56,9 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
                   <PokeCell
                     key={row}
                     active={r === row && c === column}
+                    doesExist={doesPokemonExist(
+                      pokeNumByBoxPosition(boxNum, row, column)
+                    )}
                     onClick={() =>
                       setPokenum(pokeNumByBoxPosition(boxNum, row, column))
                     }
