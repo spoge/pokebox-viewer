@@ -9,6 +9,18 @@
   color: white;
 }
 
+.box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.3em;
+}
+
+.button {
+  padding: 0.5em;
+  font-size: 0.6em;
+}
+
 .pokemon-info {
   display: flex;
   align-items: baseline;

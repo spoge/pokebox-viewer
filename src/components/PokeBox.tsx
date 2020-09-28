@@ -18,7 +18,27 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
 
   return (
     <div>
-      <div className="box-label">Box: {boxNum}</div>
+      <div className="box-header">
+        <button
+          className="button"
+          onClick={() => {
+            if (boxNum > 1) setPokenum(pokeNum - 30);
+          }}
+          disabled={boxNum === 1}
+        >
+          Box {boxNum - 1}
+        </button>
+        <div className="box-label">Box {boxNum}</div>
+        <button
+          className="button"
+          onClick={() => {
+            if (boxNum < 30) setPokenum(pokeNum + 30);
+          }}
+          disabled={boxNum === 30}
+        >
+          Box {boxNum + 1}
+        </button>
+      </div>
       <div className="box">
         {[
           [1, 2, 3, 4, 5, 6].map((column) => (
