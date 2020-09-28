@@ -32,7 +32,13 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
         <button
           className="button"
           onClick={() => {
-            if (boxNum < 30) setPokenum(pokeNum + 30);
+            if (boxNum < 30) {
+              if (pokeNum > 863) {
+                setPokenum(893);
+              } else {
+                setPokenum(pokeNum + 30);
+              }
+            }
           }}
           disabled={boxNum === 30}
         >
