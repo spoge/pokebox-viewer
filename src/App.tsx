@@ -28,7 +28,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <h2>Pokémon Box Calculator</h2>
+      <h2>Pokémon Box Viewer</h2>
       <div>
         <PokeBox pokeNum={pokenum} setPokenum={setPokenum} />
         <div className="pokemon-info">
