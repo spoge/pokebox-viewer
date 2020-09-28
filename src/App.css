@@ -19,6 +19,7 @@
 .button {
   padding: 0.5em;
   font-size: 0.6em;
+  width: 5em;
 }
 
 .pokemon-info {
