@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/pokemon-box-calculator/static/css/main.48b2982d.chunk.css",
-    "main.js": "/pokemon-box-calculator/static/js/main.b4b51c77.chunk.js",
-    "main.js.map": "/pokemon-box-calculator/static/js/main.b4b51c77.chunk.js.map",
-    "runtime-main.js": "/pokemon-box-calculator/static/js/runtime-main.4ef8cdd6.js",
-    "runtime-main.js.map": "/pokemon-box-calculator/static/js/runtime-main.4ef8cdd6.js.map",
-    "static/js/2.b8bef70f.chunk.js": "/pokemon-box-calculator/static/js/2.b8bef70f.chunk.js",
-    "static/js/2.b8bef70f.chunk.js.map": "/pokemon-box-calculator/static/js/2.b8bef70f.chunk.js.map",
-    "index.html": "/pokemon-box-calculator/index.html",
-    "precache-manifest.45a9f434ff3a4cc86fd23f422d974610.js": "/pokemon-box-calculator/precache-manifest.45a9f434ff3a4cc86fd23f422d974610.js",
-    "service-worker.js": "/pokemon-box-calculator/service-worker.js",
-    "static/css/main.48b2982d.chunk.css.map": "/pokemon-box-calculator/static/css/main.48b2982d.chunk.css.map",
-    "static/js/2.b8bef70f.chunk.js.LICENSE.txt": "/pokemon-box-calculator/static/js/2.b8bef70f.chunk.js.LICENSE.txt"
+    "main.css": "/pokebox-viewer/static/css/main.48b2982d.chunk.css",
+    "main.js": "/pokebox-viewer/static/js/main.dbd3caea.chunk.js",
+    "main.js.map": "/pokebox-viewer/static/js/main.dbd3caea.chunk.js.map",
+    "runtime-main.js": "/pokebox-viewer/static/js/runtime-main.9dd244de.js",
+    "runtime-main.js.map": "/pokebox-viewer/static/js/runtime-main.9dd244de.js.map",
+    "static/js/2.ea64b81d.chunk.js": "/pokebox-viewer/static/js/2.ea64b81d.chunk.js",
+    "static/js/2.ea64b81d.chunk.js.map": "/pokebox-viewer/static/js/2.ea64b81d.chunk.js.map",
+    "index.html": "/pokebox-viewer/index.html",
+    "precache-manifest.755937ab891dc041749c69825d768a2a.js": "/pokebox-viewer/precache-manifest.755937ab891dc041749c69825d768a2a.js",
+    "service-worker.js": "/pokebox-viewer/service-worker.js",
+    "static/css/main.48b2982d.chunk.css.map": "/pokebox-viewer/static/css/main.48b2982d.chunk.css.map",
+    "static/js/2.ea64b81d.chunk.js.LICENSE.txt": "/pokebox-viewer/static/js/2.ea64b81d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4ef8cdd6.js",
-    "static/js/2.b8bef70f.chunk.js",
+    "static/js/runtime-main.9dd244de.js",
+    "static/js/2.ea64b81d.chunk.js",
     "static/css/main.48b2982d.chunk.css",
-    "static/js/main.b4b51c77.chunk.js"
+    "static/js/main.dbd3caea.chunk.js"
   ]
 }
