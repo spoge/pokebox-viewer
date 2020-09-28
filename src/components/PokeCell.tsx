@@ -8,7 +8,7 @@ interface Props {
 
 const Cell: React.FC<Props> = ({ onClick, img = "", active = false }) => {
   return (
-    <div className={"cell"} onClick={onClick}>
+    <div className={`cell ${active ? "active" : "inactive"}`} onClick={onClick}>
       {img ? <img src={img} alt={""} /> : null}
     </div>
   );

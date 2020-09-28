@@ -62,7 +62,17 @@
   display: flex;
   justify-self: center;
   align-self: center;
-  height: 3em;
+  height: 2.7em;
+  max-width: 2.7em;
   width: auto;
   object-fit: contain;
+}
+
+.inactive img {
+  opacity: 0.4;
+}
+
+.active img {
+  opacity: 1;
+  zoom: 110%;
 }
