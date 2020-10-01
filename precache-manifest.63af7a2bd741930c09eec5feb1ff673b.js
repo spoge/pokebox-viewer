@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fcc105edc83c1d40a7a3784733073276",
+    "revision": "66497f6010e262658243f8a3b37ccb7e",
     "url": "/pokebox-viewer/index.html"
   },
   {
-    "revision": "bfd84cc4fdb3b0dd7bf8",
-    "url": "/pokebox-viewer/static/css/main.3be0919f.chunk.css"
+    "revision": "e560fe6a81c847ec72b5",
+    "url": "/pokebox-viewer/static/css/main.f0834d31.chunk.css"
   },
   {
     "revision": "9147d8db5dc7b7d4a7c1",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokebox-viewer/static/js/2.ea64b81d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "bfd84cc4fdb3b0dd7bf8",
+    "revision": "e560fe6a81c847ec72b5",
     "url": "/pokebox-viewer/static/js/main.96d74126.chunk.js"
   },
   {
