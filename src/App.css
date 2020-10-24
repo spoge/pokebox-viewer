@@ -46,6 +46,15 @@
   justify-content: space-between;
 }
 
+.pokedex-select {
+  display: flex;
+  flex-direction: row;
+}
+
+.pokedex-dropdown {
+  padding-left: 0.5em;
+}
+
 .input-field {
   padding: 0.25em;
   margin: 0.5em 0.25em;
@@ -57,6 +66,7 @@
 .input-error-label {
   color: red;
   font-size: 0.7em;
+  padding-bottom: 1em;
 }
 
 .box-label {

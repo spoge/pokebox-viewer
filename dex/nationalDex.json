@@ -1,4 +1,4 @@
-const pokemons: { [id: string]: string } = {
+{
   "001": "Bulbasaur",
   "002": "Ivysaur",
   "003": "Venusaur",
@@ -891,7 +891,5 @@ const pokemons: { [id: string]: string } = {
   "890": "Eternatus",
   "891": "Kubfu",
   "892": "Urshifu",
-  "893": "Zarude",
-};
-
-export default pokemons;
+  "893": "Zarude"
+}

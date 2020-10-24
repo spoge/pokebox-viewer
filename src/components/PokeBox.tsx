@@ -4,9 +4,21 @@ import PokeCell from "./PokeCell";
 interface Props {
   pokeNum: number;
   setPokenum: React.Dispatch<React.SetStateAction<number>>;
+  maxDexNum: number;
+  pokedex: {
+    [id: string]: {
+      nationalId: string;
+      name: string;
+    };
+  };
 }
 
-const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
+const PokeBox: React.FC<Props> = ({
+  pokeNum,
+  setPokenum,
+  maxDexNum,
+  pokedex,
+}) => {
   const boxNum = Math.ceil(pokeNum / 30);
   const numInBox = pokeNum % 30 === 0 ? 30 : pokeNum % 30;
   const r = Math.ceil(numInBox / 6);
@@ -16,7 +28,9 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
   const pokeNumByBoxPosition = (box: number, row: number, column: number) =>
     (boxNum - 1) * 30 + (row - 1) * 6 + column;
 
-  const doesPokemonExist = (pn: number) => pn >= 1 && pn <= 893;
+  const doesPokemonExist = (pn: number) => pn >= 1 && pn <= maxDexNum;
+  const getPokeDexNumIfExists = (id: string) =>
+    pokedex[id] === undefined ? "000" : pokedex[id].nationalId;
 
   return (
     <div>
@@ -34,15 +48,15 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
         <button
           className="button"
           onClick={() => {
-            if (boxNum < 30) {
-              if (pokeNum > 863) {
-                setPokenum(893);
+            if (boxNum < Math.ceil(maxDexNum / 30)) {
+              if (pokeNum > maxDexNum - 30) {
+                setPokenum(maxDexNum);
               } else {
                 setPokenum(pokeNum + 30);
               }
             }
           }}
-          disabled={boxNum === 30}
+          disabled={boxNum >= Math.ceil(maxDexNum / 30)}
         >
           Box {boxNum + 1}
         </button>
@@ -64,8 +78,8 @@ const PokeBox: React.FC<Props> = ({ pokeNum, setPokenum }) => {
                     }
                     img={`${
                       process.env.PUBLIC_URL
-                    }/pokemon-icons/${minThreeDigits(
-                      pokeNumByBoxPosition(boxNum, row, column)
+                    }/pokemon-icons/${getPokeDexNumIfExists(
+                      minThreeDigits(pokeNumByBoxPosition(boxNum, row, column))
                     )}.png`}
                   />
                 )),
