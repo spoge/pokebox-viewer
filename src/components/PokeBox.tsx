@@ -44,7 +44,9 @@ const PokeBox: React.FC<Props> = ({
         >
           Box {boxNum - 1}
         </button>
-        <div className="box-label">Box {boxNum}</div>
+        <div className="box-label">
+          Box {boxNum} ({boxNum * 30 - 29}-{boxNum * 30})
+        </div>
         <button
           className="button"
           onClick={() => {

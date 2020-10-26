@@ -892,5 +892,10 @@ const NationalDex: { [id: string]: { nationalId: string; name: string } } = {
   "891": { nationalId: "891", name: "Kubfu" },
   "892": { nationalId: "892", name: "Urshifu" },
   "893": { nationalId: "893", name: "Zarude" },
+  "894": { nationalId: "894", name: "Regieleki" },
+  "895": { nationalId: "895", name: "Regidrago" },
+  "896": { nationalId: "896", name: "Glastrier" },
+  "897": { nationalId: "897", name: "Spectrier" },
+  "898": { nationalId: "898", name: "Calyrex" },
 };
 export default NationalDex;

@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: calc(0.6em + 1vw);
+  font-size: calc(0.7em + 1vw);
   color: black;
 
   /* BG */
@@ -28,8 +28,22 @@
 
 .button {
   padding: 0.5em;
-  font-size: 0.6em;
+  font-size: 0.8em;
   width: 5em;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.big-button {
+  padding: 0.5em;
+  font-size: 0.8em;
+  width: 8em;
 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -51,8 +65,24 @@
   flex-direction: row;
 }
 
+.pokemon-info2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.pokedex-select-label {
+  margin-top: 0.1em;
+}
+
 .pokedex-dropdown {
   padding-left: 0.5em;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
 }
 
 .input-field {
@@ -67,6 +97,8 @@
   color: red;
   font-size: 0.7em;
   padding-bottom: 1em;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .box-label {

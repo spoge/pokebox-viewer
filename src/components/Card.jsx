@@ -17,12 +17,18 @@ const Card = ({ possibleValues, selectedValue, setSelectedValue }) => {
 
   return (
     <div>
-      <button onClick={showMenu}>{selectedValue}</button>
+      <button className="big-button" onClick={showMenu}>
+        {selectedValue}
+      </button>
 
       {shouldShowMenu ? (
-        <div className="menu">
+        <div className="dropdown-menu">
           {[...possibleValues].map((value) => (
-            <button key={value} onClick={() => setSelectedValue(value)}>
+            <button
+              className="big-button"
+              key={value}
+              onClick={() => setSelectedValue(value)}
+            >
               {value}
             </button>
           ))}
