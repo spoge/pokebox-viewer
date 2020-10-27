@@ -33,21 +33,20 @@ const App: React.FC = () => {
     };
   }) => Object.keys(pokedex).length;
 
-  const changePokedex = (pokedex: {
-    [id: string]: {
-      nationalId: string;
-      name: string;
-    };
-  }) => {
-    setPokedex(pokedex);
-    const maxNum = maxPokedexNum(pokedex);
-    if (pokenum > maxNum) {
-      setPokenum(maxNum);
-    }
-  };
-
   // Update pokedex if new have been selected
   useEffect(() => {
+    const changePokedex = (pokedex: {
+      [id: string]: {
+        nationalId: string;
+        name: string;
+      };
+    }) => {
+      setPokedex(pokedex);
+      const maxNum = maxPokedexNum(pokedex);
+      if (pokenum > maxNum) {
+        setPokenum(maxNum);
+      }
+    };
     if (pokedexName === "National") {
       changePokedex(NationalDex);
     } else if (pokedexName === "Galar") {
@@ -59,7 +58,7 @@ const App: React.FC = () => {
     }
 
     return () => {};
-  }, [pokedexName]);
+  }, [pokedexName, pokenum]);
 
   // Update input field when pokenum changes. I.E. on cell-click
   useEffect(() => {
