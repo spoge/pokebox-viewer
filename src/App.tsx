@@ -5,7 +5,7 @@ import NationalDex from "./dex/NationalDex";
 import GalarDex from "./dex/GalarDex";
 import IsleOfArmorDex from "./dex/IsleOfArmorDex";
 import CrownTundraDex from "./dex/CrownTundraDex";
-import Card from "./components/Card";
+import PokeDexInfo from "./components/PokeDexInfo";
 
 const App: React.FC = () => {
   const [pokedex, setPokedex] = useState(NationalDex);
@@ -97,26 +97,12 @@ const App: React.FC = () => {
         <div className="input-error-label">
           {validInput ? " " : "Invalid Pokédex number"}
         </div>
-        <div className="pokemon-info2">
-          <div className="pokedex-select">
-            <div className="pokedex-select-label">Pokedex: </div>
-            <div className="pokedex-dropdown">
-              <Card
-                possibleValues={[
-                  "National",
-                  "Galar",
-                  "Isle of Armor",
-                  "Crown Tundra",
-                ]}
-                selectedValue={pokedexName}
-                setSelectedValue={setPokedexName}
-              />
-            </div>
-          </div>
-          <div>
-            National #{pokedex[pokenum.toString().padStart(3, "0")].nationalId}
-          </div>
-        </div>
+        <PokeDexInfo
+          pokedex={pokedex}
+          pokedexName={pokedexName}
+          pokenum={pokenum}
+          setPokedexName={setPokedexName}
+        />
       </div>
     </div>
   );
