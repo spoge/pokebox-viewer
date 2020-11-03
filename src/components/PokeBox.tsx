@@ -32,14 +32,47 @@ const PokeBox: React.FC<Props> = ({
   const getPokeDexNumIfExists = (id: string) =>
     pokedex[id] === undefined ? "000" : pokedex[id].nationalId;
 
+  const prevPokeBox = () => {
+    if (boxNum > 1) setPokenum(pokeNum - 30);
+  };
+
+  const nextPokeBox = () => {
+    if (boxNum < Math.ceil(maxDexNum / 30)) {
+      if (pokeNum > maxDexNum - 30) {
+        setPokenum(maxDexNum);
+      } else {
+        setPokenum(pokeNum + 30);
+      }
+    }
+  };
+
+  const handleCellKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    console.log(`Move cell ${e.key}`);
+    if (e.key === "ArrowLeft") {
+      if (pokeNum > 1) {
+        setPokenum(pokeNum - 1);
+      }
+    } else if (e.key === "ArrowRight") {
+      if (pokeNum < maxDexNum) {
+        setPokenum(pokeNum + 1);
+      }
+    } else if (e.key === "ArrowUp") {
+      if (pokeNum - 6 >= 1) {
+        setPokenum(pokeNum - 6);
+      }
+    } else if (e.key === "ArrowDown") {
+      if (pokeNum + 6 <= maxDexNum) {
+        setPokenum(pokeNum + 6);
+      }
+    }
+  };
+
   return (
     <div>
       <div className="box-header">
         <button
           className="button"
-          onClick={() => {
-            if (boxNum > 1) setPokenum(pokeNum - 30);
-          }}
+          onClick={prevPokeBox}
           disabled={boxNum === 1}
         >
           Box {boxNum - 1}
@@ -49,15 +82,7 @@ const PokeBox: React.FC<Props> = ({
         </div>
         <button
           className="button"
-          onClick={() => {
-            if (boxNum < Math.ceil(maxDexNum / 30)) {
-              if (pokeNum > maxDexNum - 30) {
-                setPokenum(maxDexNum);
-              } else {
-                setPokenum(pokeNum + 30);
-              }
-            }
-          }}
+          onClick={nextPokeBox}
           disabled={boxNum >= Math.ceil(maxDexNum / 30)}
         >
           Box {boxNum + 1}
@@ -69,21 +94,29 @@ const PokeBox: React.FC<Props> = ({
             <div key={column}>
               {[
                 [1, 2, 3, 4, 5].map((row) => (
-                  <PokeCell
+                  <div
+                    className="no-outline"
+                    tabIndex={pokeNumByBoxPosition(boxNum, row, column)}
                     key={row}
-                    active={r === row && c === column}
-                    doesExist={doesPokemonExist(
-                      pokeNumByBoxPosition(boxNum, row, column)
-                    )}
-                    onClick={() =>
-                      setPokenum(pokeNumByBoxPosition(boxNum, row, column))
-                    }
-                    img={`${
-                      process.env.PUBLIC_URL
-                    }/pokemon-icons/${getPokeDexNumIfExists(
-                      minThreeDigits(pokeNumByBoxPosition(boxNum, row, column))
-                    )}.png`}
-                  />
+                    onKeyDown={handleCellKeyDown}
+                  >
+                    <PokeCell
+                      active={r === row && c === column}
+                      doesExist={doesPokemonExist(
+                        pokeNumByBoxPosition(boxNum, row, column)
+                      )}
+                      onClick={() =>
+                        setPokenum(pokeNumByBoxPosition(boxNum, row, column))
+                      }
+                      img={`${
+                        process.env.PUBLIC_URL
+                      }/pokemon-icons/${getPokeDexNumIfExists(
+                        minThreeDigits(
+                          pokeNumByBoxPosition(boxNum, row, column)
+                        )
+                      )}.png`}
+                    />
+                  </div>
                 )),
               ]}
             </div>

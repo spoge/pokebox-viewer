@@ -148,6 +148,10 @@
   margin-bottom: 0.25em;
 }
 
+.no-outline {
+  outline: none;
+}
+
 .box {
   display: flex;
   flex-direction: row;

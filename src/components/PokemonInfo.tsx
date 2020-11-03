@@ -42,7 +42,7 @@ const PokemonInfo: React.FC<Props> = ({
         getOptionLabel={(option) => option.name}
         onChange={(event, value) => validateThenSetPokenum(value.id)}
         renderInput={(params) => (
-          <TextField {...params} label="Pokémon Name" variant="outlined" />
+          <TextField {...params} label="Name" variant="outlined" />
         )}
       />
       <div>
