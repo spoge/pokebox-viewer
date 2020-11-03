@@ -65,7 +65,7 @@
 .button {
   padding: 0.5em;
   font-size: 0.8em;
-  width: 5em;
+  width: 6em;
   height: 2.5em;
 
   -webkit-touch-callout: none; /* iOS Safari */
@@ -80,7 +80,7 @@
 .big-button {
   padding: 0.5em;
   font-size: 0.8em;
-  width: 8em;
+  width: 9em;
   height: 2.5em;
 
   -webkit-touch-callout: none; /* iOS Safari */

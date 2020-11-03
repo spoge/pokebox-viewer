@@ -6,6 +6,7 @@ import GalarDex from "./dex/GalarDex";
 import IsleOfArmorDex from "./dex/IsleOfArmorDex";
 import CrownTundraDex from "./dex/CrownTundraDex";
 import PokeDexInfo from "./components/PokeDexInfo";
+import PokemonInfo from "./components/PokemonInfo";
 
 const App: React.FC = () => {
   const [pokedex, setPokedex] = useState(NationalDex);
@@ -13,6 +14,7 @@ const App: React.FC = () => {
   const [pokenum, setPokenum] = useState(1);
   const [pokenumInput, setPokenumInput] = useState("1");
   const [validInput, setValidInput] = useState(true);
+
   const validateThenSetPokenum = (input: string) => {
     setPokenumInput(input);
     if (!Number.isNaN(input)) {
@@ -77,23 +79,13 @@ const App: React.FC = () => {
           maxDexNum={maxPokedexNum(pokedex)}
           pokedex={pokedex}
         />
-        <div className="pokemon-info">
-          <div>Name: {pokedex[pokenum.toString().padStart(3, "0")].name}</div>
-          <div>
-            <div>
-              <span>Pokédex #</span>
-              <input
-                className="input-field"
-                type="number"
-                min={1}
-                max={maxPokedexNum(pokedex)}
-                value={pokenumInput}
-                onChange={(e) => validateThenSetPokenum(e.target.value)}
-              />
-            </div>
-          </div>
-        </div>
-
+        <PokemonInfo
+          pokedex={pokedex}
+          pokenum={pokenum}
+          pokenumInput={pokenumInput}
+          maxPokedexNum={maxPokedexNum(pokedex)}
+          validateThenSetPokenum={validateThenSetPokenum}
+        />
         <div className="input-error-label">
           {validInput ? " " : "Invalid Pokédex number"}
         </div>
