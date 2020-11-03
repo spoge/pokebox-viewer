@@ -3,6 +3,14 @@ import React, { useState } from "react";
 const Card = ({ possibleValues, selectedValue, setSelectedValue }) => {
   const [shouldShowMenu, setShouldShowMenu] = useState(false);
 
+  const buttonClick = (event) => {
+    if (shouldShowMenu) {
+      closeMenu();
+    } else {
+      showMenu(event);
+    }
+  };
+
   const showMenu = (event) => {
     event.preventDefault();
 
@@ -17,7 +25,7 @@ const Card = ({ possibleValues, selectedValue, setSelectedValue }) => {
 
   return (
     <div>
-      <button className="big-button" onClick={showMenu}>
+      <button className="big-button" onClick={buttonClick}>
         {selectedValue}
       </button>
 
