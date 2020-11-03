@@ -1,4 +1,6 @@
 import React from "react";
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
 
 interface Props {
   pokenum: number;
@@ -20,9 +22,29 @@ const PokemonInfo: React.FC<Props> = ({
   maxPokedexNum,
   validateThenSetPokenum,
 }) => {
+  const allOptions = Object.keys(pokedex)
+    .map((pokeId) => ({
+      name: pokedex[pokeId].name,
+      id: pokeId,
+    }))
+    .sort((a, b) => (a.id < b.id ? -1 : 1));
+  const pokeName = pokedex[pokenum.toString().padStart(3, "0")].name;
+  const selectedOption = allOptions.find(
+    (pokemon) => pokemon.name === pokeName
+  );
   return (
     <div className="pokemon-info">
-      <div>Name: {pokedex[pokenum.toString().padStart(3, "0")].name}</div>
+      <Autocomplete
+        className="autocomplete"
+        disableClearable
+        value={selectedOption}
+        options={allOptions}
+        getOptionLabel={(option) => option.name}
+        onChange={(event, value) => validateThenSetPokenum(value.id)}
+        renderInput={(params) => (
+          <TextField {...params} label="Pokémon Name" variant="outlined" />
+        )}
+      />
       <div>
         <div>
           <span>Pokédex #</span>

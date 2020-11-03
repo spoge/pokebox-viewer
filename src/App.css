@@ -94,8 +94,13 @@
 
 .pokemon-info {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
+  margin-top: 1em;
+}
+
+.autocomplete {
+  width: 12em;
 }
 
 .pokedex-select {
