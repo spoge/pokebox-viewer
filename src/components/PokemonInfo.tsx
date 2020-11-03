@@ -39,10 +39,10 @@ const PokemonInfo: React.FC<Props> = ({
         disableClearable
         value={selectedOption}
         options={allOptions}
-        getOptionLabel={(option) => option.name}
+        getOptionLabel={(option) => `#${option.id} - ${option.name}`}
         onChange={(event, value) => validateThenSetPokenum(value.id)}
         renderInput={(params) => (
-          <TextField {...params} label="Name" variant="outlined" />
+          <TextField {...params} label="Pokémon" variant="outlined" />
         )}
       />
       <div>

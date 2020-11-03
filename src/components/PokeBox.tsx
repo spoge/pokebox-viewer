@@ -46,8 +46,7 @@ const PokeBox: React.FC<Props> = ({
     }
   };
 
-  const handleCellKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    console.log(`Move cell ${e.key}`);
+  const handleMoveCell = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowLeft") {
       if (pokeNum > 1) {
         setPokenum(pokeNum - 1);
@@ -64,6 +63,22 @@ const PokeBox: React.FC<Props> = ({
       if (pokeNum + 6 <= maxDexNum) {
         setPokenum(pokeNum + 6);
       }
+    }
+  };
+
+  const handleNavBox = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "ArrowLeft") {
+      prevPokeBox();
+    } else if (e.key === "ArrowRight") {
+      nextPokeBox();
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.ctrlKey) {
+      handleNavBox(e);
+    } else {
+      handleMoveCell(e);
     }
   };
 
@@ -98,7 +113,7 @@ const PokeBox: React.FC<Props> = ({
                     className="no-outline"
                     tabIndex={pokeNumByBoxPosition(boxNum, row, column)}
                     key={row}
-                    onKeyDown={handleCellKeyDown}
+                    onKeyDown={handleKeyDown}
                   >
                     <PokeCell
                       active={r === row && c === column}
