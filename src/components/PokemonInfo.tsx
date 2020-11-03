@@ -4,8 +4,6 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 
 interface Props {
   pokenum: number;
-  maxPokedexNum: number;
-  pokenumInput: string;
   pokedex: {
     [id: string]: {
       nationalId: string;
@@ -16,10 +14,8 @@ interface Props {
 }
 
 const PokemonInfo: React.FC<Props> = ({
-  pokedex,
   pokenum,
-  pokenumInput,
-  maxPokedexNum,
+  pokedex,
   validateThenSetPokenum,
 }) => {
   const allOptions = Object.keys(pokedex)
@@ -46,17 +42,7 @@ const PokemonInfo: React.FC<Props> = ({
         )}
       />
       <div>
-        <div>
-          <span>Pokédex #</span>
-          <input
-            className="input-field"
-            type="number"
-            min={1}
-            max={maxPokedexNum}
-            value={pokenumInput}
-            onChange={(e) => validateThenSetPokenum(e.target.value)}
-          />
-        </div>
+        National: #{pokedex[pokenum.toString().padStart(3, "0")].nationalId}
       </div>
     </div>
   );

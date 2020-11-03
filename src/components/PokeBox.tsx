@@ -11,6 +11,8 @@ interface Props {
       name: string;
     };
   };
+  pokedexName: string;
+  setPokedexName: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const PokeBox: React.FC<Props> = ({
@@ -18,6 +20,8 @@ const PokeBox: React.FC<Props> = ({
   setPokenum,
   maxDexNum,
   pokedex,
+  pokedexName,
+  setPokedexName,
 }) => {
   const boxNum = Math.ceil(pokeNum / 30);
   const numInBox = pokeNum % 30 === 0 ? 30 : pokeNum % 30;
@@ -46,6 +50,30 @@ const PokeBox: React.FC<Props> = ({
     }
   };
 
+  const prevPokedex = () => {
+    if (pokedexName === "National") {
+      setPokedexName("Crown Tundra");
+    } else if (pokedexName === "Galar") {
+      setPokedexName("National");
+    } else if (pokedexName === "Isle of Armor") {
+      setPokedexName("Galar");
+    } else if (pokedexName === "Crown Tundra") {
+      setPokedexName("Isle of Armor");
+    }
+  };
+
+  const nextPokedex = () => {
+    if (pokedexName === "National") {
+      setPokedexName("Galar");
+    } else if (pokedexName === "Galar") {
+      setPokedexName("Isle of Armor");
+    } else if (pokedexName === "Isle of Armor") {
+      setPokedexName("Crown Tundra");
+    } else if (pokedexName === "Crown Tundra") {
+      setPokedexName("National");
+    }
+  };
+
   const handleMoveCell = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowLeft") {
       if (pokeNum > 1) {
@@ -71,6 +99,10 @@ const PokeBox: React.FC<Props> = ({
       prevPokeBox();
     } else if (e.key === "ArrowRight") {
       nextPokeBox();
+    } else if (e.key === "ArrowUp") {
+      prevPokedex();
+    } else if (e.key === "ArrowDown") {
+      nextPokedex();
     }
   };
 
@@ -111,7 +143,7 @@ const PokeBox: React.FC<Props> = ({
                 [1, 2, 3, 4, 5].map((row) => (
                   <div
                     className="no-outline"
-                    tabIndex={pokeNumByBoxPosition(boxNum, row, column)}
+                    tabIndex={0}
                     key={row}
                     onKeyDown={handleKeyDown}
                   >
