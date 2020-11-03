@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import PokeBox from "./components/PokeBox";
 import NationalDex from "./dex/NationalDex";
@@ -9,6 +9,8 @@ import PokeDexInfo from "./components/PokeDexInfo";
 import PokemonInfo from "./components/PokemonInfo";
 
 const App: React.FC = () => {
+  const pokeboxRef = useRef<HTMLDivElement>(null);
+
   const [pokedex, setPokedex] = useState(NationalDex);
   const [pokedexName, setPokedexName] = useState("National");
   const [pokenum, setPokenum] = useState(1);
@@ -56,6 +58,8 @@ const App: React.FC = () => {
       changePokedex(CrownTundraDex);
     }
 
+    pokeboxRef.current?.focus();
+
     return () => {};
   }, [pokedexName, pokenum]);
 
@@ -64,6 +68,7 @@ const App: React.FC = () => {
       <h2>Pokémon Box Viewer</h2>
       <div>
         <PokeBox
+          pokeboxRef={pokeboxRef}
           pokeNum={pokenum}
           setPokenum={setPokenum}
           maxDexNum={maxPokedexNum(pokedex)}

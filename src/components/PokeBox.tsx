@@ -13,6 +13,7 @@ interface Props {
   };
   pokedexName: string;
   setPokedexName: React.Dispatch<React.SetStateAction<string>>;
+  pokeboxRef: React.RefObject<HTMLDivElement>;
 }
 
 const PokeBox: React.FC<Props> = ({
@@ -22,6 +23,7 @@ const PokeBox: React.FC<Props> = ({
   pokedex,
   pokedexName,
   setPokedexName,
+  pokeboxRef,
 }) => {
   const boxNum = Math.ceil(pokeNum / 30);
   const numInBox = pokeNum % 30 === 0 ? 30 : pokeNum % 30;
@@ -37,7 +39,9 @@ const PokeBox: React.FC<Props> = ({
     pokedex[id] === undefined ? "000" : pokedex[id].nationalId;
 
   const prevPokeBox = () => {
-    if (boxNum > 1) setPokenum(pokeNum - 30);
+    if (boxNum > 1) {
+      setPokenum(pokeNum - 30);
+    }
   };
 
   const nextPokeBox = () => {
@@ -135,35 +139,32 @@ const PokeBox: React.FC<Props> = ({
           Box {boxNum + 1}
         </button>
       </div>
-      <div className="box">
+      <div
+        ref={pokeboxRef}
+        className="box no-outline"
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+      >
         {[
           [1, 2, 3, 4, 5, 6].map((column) => (
             <div key={column}>
               {[
                 [1, 2, 3, 4, 5].map((row) => (
-                  <div
-                    className="no-outline"
-                    tabIndex={0}
+                  <PokeCell
                     key={row}
-                    onKeyDown={handleKeyDown}
-                  >
-                    <PokeCell
-                      active={r === row && c === column}
-                      doesExist={doesPokemonExist(
-                        pokeNumByBoxPosition(boxNum, row, column)
-                      )}
-                      onClick={() =>
-                        setPokenum(pokeNumByBoxPosition(boxNum, row, column))
-                      }
-                      img={`${
-                        process.env.PUBLIC_URL
-                      }/pokemon-icons/${getPokeDexNumIfExists(
-                        minThreeDigits(
-                          pokeNumByBoxPosition(boxNum, row, column)
-                        )
-                      )}.png`}
-                    />
-                  </div>
+                    active={r === row && c === column}
+                    doesExist={doesPokemonExist(
+                      pokeNumByBoxPosition(boxNum, row, column)
+                    )}
+                    onClick={() =>
+                      setPokenum(pokeNumByBoxPosition(boxNum, row, column))
+                    }
+                    img={`${
+                      process.env.PUBLIC_URL
+                    }/pokemon-icons/${getPokeDexNumIfExists(
+                      minThreeDigits(pokeNumByBoxPosition(boxNum, row, column))
+                    )}.png`}
+                  />
                 )),
               ]}
             </div>

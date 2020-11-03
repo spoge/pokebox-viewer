@@ -33,6 +33,7 @@ const PokemonInfo: React.FC<Props> = ({
       <Autocomplete
         className="autocomplete"
         disableClearable
+        blurOnSelect
         value={selectedOption}
         options={allOptions}
         getOptionLabel={(option) => `#${option.id} - ${option.name}`}
