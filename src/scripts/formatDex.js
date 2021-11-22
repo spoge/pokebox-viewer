@@ -1,5 +1,7 @@
-const NationalDex = require("../dex/NationalDex.json");
-const SinnohDex = require("../dex/SinnohDex.json");
+const fs = require("fs");
+
+const NationalDex = require("./nationalDex.json");
+const LocalDex = require("./localDex.json");
 
 const findNationalId = (name) => {
   const matches = Object.entries(NationalDex)
@@ -9,13 +11,13 @@ const findNationalId = (name) => {
 };
 
 const main = () => {
-  Object.entries(SinnohDex).forEach((dexEntry) => {
-    SinnohDex[dexEntry[0]] = {
+  Object.entries(LocalDex).forEach((dexEntry) => {
+    LocalDex[dexEntry[0]] = {
       nationalId: findNationalId(dexEntry[1]),
       name: dexEntry[1],
     };
   });
-  console.log(JSON.stringify(SinnohDex));
+  fs.writeFileSync("dump.json", JSON.stringify(LocalDex));
 };
 
 main();
