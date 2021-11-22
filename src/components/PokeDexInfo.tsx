@@ -15,10 +15,18 @@ const PokeDexInfo: React.FC<Props> = ({ pokedexName, setPokedexName }) => {
           <Card
             possibleValues={[
               "National",
-              "Sinnoh",
-              "Galar",
-              "Isle of Armor",
-              "Crown Tundra",
+              "I - Kanto",
+              "II - Johto",
+              "III - Hoenn",
+              "IV - Sinnoh",
+              "V - Unova",
+              "VI - Kalos Central",
+              "VI - Kalos Coastal",
+              "VI - Kalos Mountain",
+              "VII - Alola",
+              "VIII - Galar",
+              "VIII - Isle of Armor",
+              "VIII - Crown Tundra",
             ]}
             selectedValue={pokedexName}
             setSelectedValue={setPokedexName}

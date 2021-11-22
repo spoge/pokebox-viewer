@@ -2,12 +2,20 @@ import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import PokeBox from "./components/PokeBox";
 import NationalDex from "./dex/NationalDex";
+import KantoDex from "./dex/KantoDex";
+import JohtoDex from "./dex/JohtoDex";
+import HoennDex from "./dex/HoennDex";
+import SinnohDex from "./dex/SinnohDex";
+import UnovaDex from "./dex/UnovaDex";
+import KalosCentralDex from "./dex/KalosCentralDex";
+import KalosCoastalDex from "./dex/KalosCoastalDex";
+import KalosMountainDex from "./dex/KalosMountainDex";
+import AlolaDex from "./dex/AlolaDex";
 import GalarDex from "./dex/GalarDex";
 import IsleOfArmorDex from "./dex/IsleOfArmorDex";
 import CrownTundraDex from "./dex/CrownTundraDex";
 import PokeDexInfo from "./components/PokeDexInfo";
 import PokemonInfo from "./components/PokemonInfo";
-import SinnohDex from "./dex/SinnohDex";
 
 const App: React.FC = () => {
   const pokeboxRef = useRef<HTMLDivElement>(null);
@@ -51,14 +59,30 @@ const App: React.FC = () => {
 
     if (pokedexName === "National") {
       changePokedex(NationalDex);
-    } else if (pokedexName === "Galar") {
-      changePokedex(GalarDex);
-    } else if (pokedexName === "Isle of Armor") {
-      changePokedex(IsleOfArmorDex);
-    } else if (pokedexName === "Crown Tundra") {
-      changePokedex(CrownTundraDex);
-    } else if (pokedexName === "Sinnoh") {
+    } else if (pokedexName === "I - Kanto") {
+      changePokedex(KantoDex);
+    } else if (pokedexName === "II - Johto") {
+      changePokedex(JohtoDex);
+    } else if (pokedexName === "III - Hoenn") {
+      changePokedex(HoennDex);
+    } else if (pokedexName === "IV - Sinnoh") {
       changePokedex(SinnohDex);
+    } else if (pokedexName === "V - Unova") {
+      changePokedex(UnovaDex);
+    } else if (pokedexName === "VI - Kalos Central") {
+      changePokedex(KalosCentralDex);
+    } else if (pokedexName === "VI - Kalos Coastal") {
+      changePokedex(KalosCoastalDex);
+    } else if (pokedexName === "VI - Kalos Mountain") {
+      changePokedex(KalosMountainDex);
+    } else if (pokedexName === "VII - Alola") {
+      changePokedex(AlolaDex);
+    } else if (pokedexName === "VIII - Galar") {
+      changePokedex(GalarDex);
+    } else if (pokedexName === "VIII - Isle of Armor") {
+      changePokedex(IsleOfArmorDex);
+    } else if (pokedexName === "VIII - Crown Tundra") {
+      changePokedex(CrownTundraDex);
     }
 
     pokeboxRef.current?.focus();
