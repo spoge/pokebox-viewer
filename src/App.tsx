@@ -7,6 +7,7 @@ import IsleOfArmorDex from "./dex/IsleOfArmorDex";
 import CrownTundraDex from "./dex/CrownTundraDex";
 import PokeDexInfo from "./components/PokeDexInfo";
 import PokemonInfo from "./components/PokemonInfo";
+import SinnohDex from "./dex/SinnohDex";
 
 const App: React.FC = () => {
   const pokeboxRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,8 @@ const App: React.FC = () => {
       changePokedex(IsleOfArmorDex);
     } else if (pokedexName === "Crown Tundra") {
       changePokedex(CrownTundraDex);
+    } else if (pokedexName === "Sinnoh") {
+      changePokedex(SinnohDex);
     }
 
     pokeboxRef.current?.focus();

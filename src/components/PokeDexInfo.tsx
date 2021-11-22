@@ -15,6 +15,7 @@ const PokeDexInfo: React.FC<Props> = ({ pokedexName, setPokedexName }) => {
           <Card
             possibleValues={[
               "National",
+              "Sinnoh",
               "Galar",
               "Isle of Armor",
               "Crown Tundra",
