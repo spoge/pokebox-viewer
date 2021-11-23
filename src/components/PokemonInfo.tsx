@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/PokemonInfo.css";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 

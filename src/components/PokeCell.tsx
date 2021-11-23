@@ -1,28 +1,32 @@
 import React from "react";
+import "./styles/PokeCell.css";
 
 interface Props {
-  active?: boolean;
-  doesExist: boolean;
+  selected?: boolean;
+  obtained?: boolean;
   img?: string;
   onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
 }
 
 const Cell: React.FC<Props> = ({
   onClick,
-  doesExist,
   img = "",
-  active = false,
+  selected = false,
+  obtained = false,
 }) => {
   return (
     <div
-      className={`cell ${active ? "active" : "inactive"}`}
-      onClick={(e) => {
-        if (doesExist) {
-          onClick(e);
-        }
-      }}
+      className={`pokecell ${selected ? "selected" : "notselected"} ${
+        obtained ? "obtained" : "unobtained"
+      }`}
+      onClick={onClick}
     >
-      {doesExist ? <img src={img} alt={""} /> : null}
+      <img src={img} alt={""} className="pokeimage" />
+      {/* <img
+        src={`${process.env.PUBLIC_URL}/checkmark.png`}
+        alt={""}
+        className="checkmark"
+      /> */}
     </div>
   );
 };

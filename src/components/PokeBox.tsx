@@ -1,5 +1,7 @@
 import React from "react";
+import "./styles/PokeBox.css";
 import PokeCell from "./PokeCell";
+import EmptyCell from "./EmptyCell";
 
 interface Props {
   pokeNum: number;
@@ -149,23 +151,29 @@ const PokeBox: React.FC<Props> = ({
           [1, 2, 3, 4, 5, 6].map((column) => (
             <div key={column}>
               {[
-                [1, 2, 3, 4, 5].map((row) => (
-                  <PokeCell
-                    key={row}
-                    active={r === row && c === column}
-                    doesExist={doesPokemonExist(
-                      pokeNumByBoxPosition(boxNum, row, column)
-                    )}
-                    onClick={() =>
-                      setPokenum(pokeNumByBoxPosition(boxNum, row, column))
-                    }
-                    img={`${
-                      process.env.PUBLIC_URL
-                    }/pokemon-icons/${getPokeDexNumIfExists(
-                      minThreeDigits(pokeNumByBoxPosition(boxNum, row, column))
-                    )}.png`}
-                  />
-                )),
+                [1, 2, 3, 4, 5].map((row) =>
+                  doesPokemonExist(
+                    pokeNumByBoxPosition(boxNum, row, column)
+                  ) ? (
+                    <PokeCell
+                      key={row}
+                      selected={r === row && c === column}
+                      obtained={true}
+                      onClick={() =>
+                        setPokenum(pokeNumByBoxPosition(boxNum, row, column))
+                      }
+                      img={`${
+                        process.env.PUBLIC_URL
+                      }/pokemon-icons/${getPokeDexNumIfExists(
+                        minThreeDigits(
+                          pokeNumByBoxPosition(boxNum, row, column)
+                        )
+                      )}.png`}
+                    />
+                  ) : (
+                    <EmptyCell />
+                  )
+                ),
               ]}
             </div>
           )),

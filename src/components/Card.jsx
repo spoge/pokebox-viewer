@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles/Card.css";
 
 const Card = ({ possibleValues, selectedValue, setSelectedValue }) => {
   const [shouldShowMenu, setShouldShowMenu] = useState(false);

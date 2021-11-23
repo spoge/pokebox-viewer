@@ -1,0 +1,36 @@
+.box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.3em;
+}
+
+.button {
+  padding: 0.5em;
+  font-size: 0.8em;
+  width: 6em;
+  height: 2.5em;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.box-label {
+  margin-bottom: 0.25em;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-self: center;
+}

@@ -1,0 +1,95 @@
+.pokecell {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  /* border: 1px solid gainsboro; */
+  /* background-color: white; */
+  background: rgba(255, 255, 255, 0.5);
+  color: #17161d;
+  padding: 0.1em;
+  margin: 0.25em;
+  min-width: 3em;
+  min-height: 3em;
+  max-width: 3em;
+  max-height: 3em;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.pokecell img {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  height: 2.7em;
+  max-width: 2.7em;
+  width: auto;
+  object-fit: contain;
+}
+
+.notselected .pokeimage {
+  opacity: 0.8;
+}
+
+.notselected .pokeimage:hover {
+  opacity: 1;
+  zoom: 110%;
+}
+
+.pokeimage {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  zoom: 25%;
+  opacity: 0.2;
+}
+
+.selected .checkmark {
+  opacity: 1;
+}
+
+.selected .checkmark:hover {
+  opacity: 1;
+  zoom: 30%;
+}
+
+.notselected .checkmark {
+  opacity: 0;
+}
+
+.notselected .checkmark:hover {
+  opacity: 0.5;
+}
+
+.selected {
+  background: rgb(0, 159, 247);
+  background: radial-gradient(
+    circle,
+    rgba(0, 159, 247, 1) 0%,
+    rgba(255, 255, 255, 0.9) 80%
+  );
+}
+
+.selected .pokeimage {
+  opacity: 1;
+  zoom: 110%;
+}

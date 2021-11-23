@@ -1,0 +1,20 @@
+.pokedex-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.pokedex-select {
+  display: flex;
+  flex-direction: row;
+}
+
+.pokedex-select-label {
+  margin-top: 0.1em;
+}
+
+.pokedex-dropdown {
+  padding-left: 0.5em;
+}

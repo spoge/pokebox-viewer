@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/PokeDexInfo.css";
 import Card from "./Card";
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 
 const PokeDexInfo: React.FC<Props> = ({ pokedexName, setPokedexName }) => {
   return (
-    <div className="pokemon-info2">
+    <div className="pokedex-info">
       <div className="pokedex-select">
         <div className="pokedex-select-label">Pokedex: </div>
         <div className="pokedex-dropdown">
