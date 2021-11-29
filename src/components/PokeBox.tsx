@@ -2,19 +2,13 @@ import React from "react";
 import "./styles/PokeBox.css";
 import PokeCell from "./PokeCell";
 import EmptyCell from "./EmptyCell";
+import PokeDexType from "../types/PokeDexType";
 
 interface Props {
   pokeNum: number;
   setPokenum: React.Dispatch<React.SetStateAction<number>>;
   maxDexNum: number;
-  pokedex: {
-    [id: string]: {
-      nationalId: string;
-      name: string;
-    };
-  };
-  pokedexName: string;
-  setPokedexName: React.Dispatch<React.SetStateAction<string>>;
+  pokedex: PokeDexType;
   pokeboxRef: React.RefObject<HTMLDivElement>;
 }
 
@@ -23,8 +17,6 @@ const PokeBox: React.FC<Props> = ({
   setPokenum,
   maxDexNum,
   pokedex,
-  pokedexName,
-  setPokedexName,
   pokeboxRef,
 }) => {
   const boxNum = Math.ceil(pokeNum / 30);
@@ -56,30 +48,6 @@ const PokeBox: React.FC<Props> = ({
     }
   };
 
-  const prevPokedex = () => {
-    if (pokedexName === "National") {
-      setPokedexName("Crown Tundra");
-    } else if (pokedexName === "Galar") {
-      setPokedexName("National");
-    } else if (pokedexName === "Isle of Armor") {
-      setPokedexName("Galar");
-    } else if (pokedexName === "Crown Tundra") {
-      setPokedexName("Isle of Armor");
-    }
-  };
-
-  const nextPokedex = () => {
-    if (pokedexName === "National") {
-      setPokedexName("Galar");
-    } else if (pokedexName === "Galar") {
-      setPokedexName("Isle of Armor");
-    } else if (pokedexName === "Isle of Armor") {
-      setPokedexName("Crown Tundra");
-    } else if (pokedexName === "Crown Tundra") {
-      setPokedexName("National");
-    }
-  };
-
   const handleMoveCell = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "ArrowLeft") {
       if (pokeNum > 1) {
@@ -105,10 +73,6 @@ const PokeBox: React.FC<Props> = ({
       prevPokeBox();
     } else if (e.key === "ArrowRight") {
       nextPokeBox();
-    } else if (e.key === "ArrowUp") {
-      prevPokedex();
-    } else if (e.key === "ArrowDown") {
-      nextPokedex();
     }
   };
 
@@ -171,7 +135,7 @@ const PokeBox: React.FC<Props> = ({
                       )}.png`}
                     />
                   ) : (
-                    <EmptyCell />
+                    <EmptyCell key={row} />
                   )
                 ),
               ]}

@@ -1,36 +1,52 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import "./styles/PokeDexInfo.css";
 import Card from "./Card";
 
 interface Props {
   pokedexName: string;
-  setPokedexName: React.Dispatch<React.SetStateAction<string>>;
+  changeToPokedex: (name: string) => void;
 }
 
-const PokeDexInfo: React.FC<Props> = ({ pokedexName, setPokedexName }) => {
+const PokeDexInfo: React.FC<Props> = ({ pokedexName, changeToPokedex }) => {
+  const [pokedexNames, setPokedexNames] = useState([]);
+
+  const updatePokedexList = () => {
+    const pokedexNamesPromise = fetchPokedexNames();
+    pokedexNamesPromise.then((fetchedNames) => {
+      setPokedexNames(fetchedNames);
+    });
+  };
+
+  useEffect(() => {
+    updatePokedexList();
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    updatePokedexList();
+    // eslint-disable-next-line
+  }, [changeToPokedex]);
+
+  const fetchPokedexNames = useCallback(() => {
+    return fetch("dex/pokedexes.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    }).then(function (response) {
+      return response.json();
+    });
+  }, []);
+
   return (
     <div className="pokedex-info">
       <div className="pokedex-select">
         <div className="pokedex-select-label">Pokedex: </div>
         <div className="pokedex-dropdown">
           <Card
-            possibleValues={[
-              "National",
-              "I - Kanto",
-              "II - Johto",
-              "III - Hoenn",
-              "IV - Sinnoh",
-              "V - Unova",
-              "VI - Kalos Central",
-              "VI - Kalos Coastal",
-              "VI - Kalos Mountain",
-              "VII - Alola",
-              "VIII - Galar",
-              "VIII - Isle of Armor",
-              "VIII - Crown Tundra",
-            ]}
+            possibleValues={pokedexNames}
             selectedValue={pokedexName}
-            setSelectedValue={setPokedexName}
+            setSelectedValue={changeToPokedex}
           />
         </div>
       </div>

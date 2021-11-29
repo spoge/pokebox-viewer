@@ -2,15 +2,11 @@ import React from "react";
 import "./styles/PokemonInfo.css";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
+import PokeDexType from "../types/PokeDexType";
 
 interface Props {
   pokenum: number;
-  pokedex: {
-    [id: string]: {
-      nationalId: string;
-      name: string;
-    };
-  };
+  pokedex: PokeDexType;
   validateThenSetPokenum: (input: string) => void;
 }
 
