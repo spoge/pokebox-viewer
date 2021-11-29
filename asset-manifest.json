@@ -1,22 +1,18 @@
 {
   "files": {
-    "main.css": "/pokebox-viewer/static/css/main.28c94a20.chunk.css",
+    "main.css": "/pokebox-viewer/static/css/main.295362ae.chunk.css",
     "main.js": "/pokebox-viewer/static/js/main.e917ac6b.chunk.js",
-    "main.js.map": "/pokebox-viewer/static/js/main.e917ac6b.chunk.js.map",
     "runtime-main.js": "/pokebox-viewer/static/js/runtime-main.9dd244de.js",
-    "runtime-main.js.map": "/pokebox-viewer/static/js/runtime-main.9dd244de.js.map",
     "static/js/2.a980fb63.chunk.js": "/pokebox-viewer/static/js/2.a980fb63.chunk.js",
-    "static/js/2.a980fb63.chunk.js.map": "/pokebox-viewer/static/js/2.a980fb63.chunk.js.map",
     "index.html": "/pokebox-viewer/index.html",
-    "precache-manifest.a79a62d7adbbd049e00913cf2174cc1f.js": "/pokebox-viewer/precache-manifest.a79a62d7adbbd049e00913cf2174cc1f.js",
+    "precache-manifest.0637113999e215a1f00907a2b6a0b252.js": "/pokebox-viewer/precache-manifest.0637113999e215a1f00907a2b6a0b252.js",
     "service-worker.js": "/pokebox-viewer/service-worker.js",
-    "static/css/main.28c94a20.chunk.css.map": "/pokebox-viewer/static/css/main.28c94a20.chunk.css.map",
     "static/js/2.a980fb63.chunk.js.LICENSE.txt": "/pokebox-viewer/static/js/2.a980fb63.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9dd244de.js",
     "static/js/2.a980fb63.chunk.js",
-    "static/css/main.28c94a20.chunk.css",
+    "static/css/main.295362ae.chunk.css",
     "static/js/main.e917ac6b.chunk.js"
   ]
 }
